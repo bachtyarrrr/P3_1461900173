@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit Data</title>
+</head>
+
+<body>
+    <h3>Edit Barang</h3>
+    <a href="/barang"> Kembali</a>
+    <br />
+    <br />
+    @foreach($barang as $b)
+    <form action="/barang/update" method="post">
+        {{ csrf_field() }}
+        <input type="hidden" name="id" value="{{ $b->id }}"> <br />
+        Nama <input type="text" required="required" name="nama" value="{{ $b->nama }}"> <br />
+        Alamat <textarea required="required" name="harga">{{ $b->harga }}</textarea> <br />
+        <input type="submit" value="Simpan Data">
+    </form>
+    @endforeach
+</body>
+
+</html>
